@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Lojas</title>
+</head>
+<body>
+    <h2>Meu retorno de sites</h2>
+    <form id="searchForm">
+        <input type="text" id="search" placeholder="Digite sua busca..." required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    <h3>Resultados:</h3>
+    <ul id="resultados"></ul>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const termo = document.getElementById("search").value;
+
+            const response = await fetch("/buscar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ q: termo })
+            });
+
+            const data = await response.json();
+            const lista = document.getElementById("resultados");
+            lista.innerHTML = "";
+
+            if (data.erro) {
+                lista.innerHTML = `<li style="color: red;">${data.erro}</li>`;
+                return;
+            }
+
+            data.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="${item.link}" target="_blank">${item.nome}</a>`;
+                lista.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
