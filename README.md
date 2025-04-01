@@ -15,7 +15,7 @@ O web scraping com Python facilita e automatiza esse processo!
 
 - Empresas de mídia e redes sociais, como X/Twitter, Facebook e Instagram, utilizam o web scraping para monitorar tópicos e assuntos em alta.
 
-### Este projeto é meu material de estudo 📚
+## Este projeto é meu material de estudo 📚
 No momento, ele retorna apenas sites relacionados à busca realizada, mas o projeto tem potencial para se tornar algo muito maior!
 Já imaginou o que poderia ser feito com web scraping?
 
