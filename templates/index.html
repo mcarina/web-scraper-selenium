@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca de Lojas</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 <body>
-    <h2>Meu retorno de sites</h2>
-    <form id="searchForm">
-        <input type="text" id="search" placeholder="Digite sua busca..." required>
-        <button type="submit">Buscar</button>
-    </form>
+    <header>
+        <h1>Scraping com Selenium</h1>
+    </header>
 
-    <h3>Resultados:</h3>
-    <ul id="resultados"></ul>
+    <main>
+        <section class="search-container">
+            <form id="searchForm" class="search-form">
+                <input type="text" class="search-input" id="search" placeholder="Digite sua busca..." required>
+                <button type="submit" class="search-button">Buscar</button>
+            </form>
+        </section>
+    
+        <section class="results-container">
+            <h2 class="results-title">Resultados:</h2>
+            <ul id="resultados"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://github.com/mcarina/">&copy; 2025 github.com/mcarina</a>
+    </footer>
 
     <script>
         document.getElementById("searchForm").addEventListener("submit", async function(event) {
@@ -37,7 +51,9 @@
 
             data.forEach(item => {
                 const li = document.createElement("li");
-                li.innerHTML = `<a href="${item.link}" target="_blank">${item.nome}</a>`;
+                li.innerHTML = `
+                <a href="${item.link}" target="_blank" class="result-url" >${item.nome}</a>
+                `;
                 lista.appendChild(li);
             });
         });
