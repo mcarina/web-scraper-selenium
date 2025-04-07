@@ -16,6 +16,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ============== TAGS ============== */
+
 body {
     background-color: #f5f7fa;
     color: var(--secondary-color);
@@ -61,6 +63,30 @@ a{
     text-decoration: none;
     color: inherit; 
 }
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* ============== NAVEGAÇÃO ============== */
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+}
+
+.nav-link:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--primary-dark);
+}
+
+/* ============== BARRA DE BUSCA ============== */
 
 .search-container {
     background-color: white;
@@ -113,11 +139,14 @@ a{
     transform: translateY(0);
 }
 
+/* ============== RESULTADO DA BUSCA ============== */
+
 .results-container {
     background-color: white;
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
 }
 
 .results-title {
@@ -164,6 +193,66 @@ a{
     font-style: italic;
 }
 
+/* ============== SESSÃO "SOBBRE" ============== */
+.content-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.about-section {
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: var(--secondary-color);
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.feature-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -5px;
+    font-size: 1.2rem;
+}
+
+/* ============== COMO USAR ============== */
+.how-to-use {
+    background-color: var(--light-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+}
+
+.how-to-use ol {
+    padding-left: 25px;
+    margin: 15px 0;
+}
+
+.how-to-use li {
+    margin-bottom: 10px;
+}
+
+/* ============== FOOTER ============== */
+
 footer {
     text-align: center;
     margin-top: 40px;
@@ -184,5 +273,9 @@ footer {
 
     h1 {
         font-size: 2rem;
+    }
+
+    .content-container {
+        padding: 20px;
     }
 }
